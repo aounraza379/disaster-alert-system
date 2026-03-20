@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.services.usgs import fetch_earthquakes
+# from app.services.usgs import fetch_earthquakes
 
 from app.services.eonet import fetch_natural_events
+
+from app.services.usgs import fetch_earthquakes, save_earthquakes
 
 app = FastAPI(
     title="Disaster Alert System",
@@ -29,6 +31,7 @@ async def health():
 @app.get("/api/earthquakes")
 async def get_earthquakes():
     data = await fetch_earthquakes()
+    await save_earthquakes(data)
     return {"count": len(data), "events": data}
 
 
@@ -36,5 +39,3 @@ async def get_earthquakes():
 async def get_events():
     data = await fetch_natural_events()
     return {"count": len(data), "events": data}
-
-
