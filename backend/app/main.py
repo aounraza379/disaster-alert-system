@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.services.usgs import fetch_earthquakes, save_earthquakes
 from app.services.eonet import fetch_natural_events, save_events
 from app.core.scheduler import start_scheduler, scheduler
+from app.api.matching import router as matching_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -26,6 +27,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(matching_router)
+
 @app.get("/")
 async def root():
     return {"status": "online", "message": "Disaster Alert API running"}
@@ -45,3 +48,4 @@ async def get_events():
     data = await fetch_natural_events()
     await save_events(data)
     return {"count": len(data), "events": data}
+
