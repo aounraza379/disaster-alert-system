@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+.maplibregl-popup-content {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.maplibregl-popup-tip {
+  display: none !important;
+}

@@ -72,12 +72,31 @@ export default function DisasterMap({ events, selectedId, onSelectEvent }: Props
       const marker = new maplibregl.Marker({ element: el })
         .setLngLat([event.longitude, event.latitude])
         .setPopup(
-          new maplibregl.Popup({ offset: 10 }).setHTML(`
-            <div style="font-family:sans-serif;padding:4px">
-              <strong>${event.title}</strong><br/>
-              ${isEarthquake ? `Magnitude: ${event.magnitude}` : event.category || ''}
-            </div>
-          `)
+          new maplibregl.Popup({ offset: 10 })
+            .setHTML(`
+      <div style="
+        font-family: sans-serif;
+        padding: 6px 8px;
+        background: #111827;
+          color: #f9fafb;
+          border-radius: 6px;
+          font-size: 12px;
+          min-width: 160px;
+        ">
+          <div style="font-weight:600;margin-bottom:4px;color:#ffffff">
+            ${event.title}
+          </div>
+          <div style="color:#9ca3af">
+            ${isEarthquake
+                ? `Magnitude: <span style="color:#fca5a5">${event.magnitude}</span>`
+                : `<span style="color:#93c5fd">${event.category || 'Natural Event'}</span>`
+              }
+          </div>
+          <div style="color:#6b7280;font-size:11px;margin-top:3px">
+            ${event.latitude.toFixed(3)}, ${event.longitude.toFixed(3)}
+          </div>
+        </div>
+      `)
         )
         .addTo(map.current!)
 
