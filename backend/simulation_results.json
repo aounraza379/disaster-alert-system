@@ -1,0 +1,248 @@
+{
+  "summary": [
+    {
+      "total_posts": 1000,
+      "real_posts": 700,
+      "fake_posts": 300,
+      "threshold": 0.2,
+      "true_positives": 158,
+      "false_positives": 0,
+      "true_negatives": 700,
+      "false_negatives": 142,
+      "precision": 1.0,
+      "recall": 0.5267,
+      "f1_score": 0.69,
+      "accuracy": 0.858
+    },
+    {
+      "total_posts": 1000,
+      "real_posts": 700,
+      "fake_posts": 300,
+      "threshold": 0.3,
+      "true_positives": 300,
+      "false_positives": 0,
+      "true_negatives": 700,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "accuracy": 1.0
+    },
+    {
+      "total_posts": 1000,
+      "real_posts": 700,
+      "fake_posts": 300,
+      "threshold": 0.35,
+      "true_positives": 300,
+      "false_positives": 0,
+      "true_negatives": 700,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "accuracy": 1.0
+    }
+  ],
+  "sample_posts": [
+    {
+      "id": "real_0",
+      "label": "real",
+      "latitude": 24.8391,
+      "longitude": 66.9751,
+      "hours_old": 5.0,
+      "vouch_count": 1,
+      "is_near_disaster": true,
+      "trust_score": 0.7
+    },
+    {
+      "id": "real_1",
+      "label": "real",
+      "latitude": 24.9493,
+      "longitude": 67.1076,
+      "hours_old": 13.3,
+      "vouch_count": 4,
+      "is_near_disaster": true,
+      "trust_score": 0.9
+    },
+    {
+      "id": "real_2",
+      "label": "real",
+      "latitude": 25.3479,
+      "longitude": 67.2973,
+      "hours_old": 0.5,
+      "vouch_count": 1,
+      "is_near_disaster": true,
+      "trust_score": 0.7
+    },
+    {
+      "id": "real_3",
+      "label": "real",
+      "latitude": 24.9492,
+      "longitude": 67.8098,
+      "hours_old": 10.1,
+      "vouch_count": 4,
+      "is_near_disaster": true,
+      "trust_score": 0.95
+    },
+    {
+      "id": "real_4",
+      "label": "real",
+      "latitude": 24.3296,
+      "longitude": 67.2951,
+      "hours_old": 5.0,
+      "vouch_count": 0,
+      "is_near_disaster": true,
+      "trust_score": 0.6
+    },
+    {
+      "id": "real_5",
+      "label": "real",
+      "latitude": 24.8726,
+      "longitude": 66.7857,
+      "hours_old": 7.6,
+      "vouch_count": 2,
+      "is_near_disaster": true,
+      "trust_score": 0.75
+    },
+    {
+      "id": "real_6",
+      "label": "real",
+      "latitude": 25.5845,
+      "longitude": 68.0731,
+      "hours_old": 6.1,
+      "vouch_count": 0,
+      "is_near_disaster": true,
+      "trust_score": 0.55
+    },
+    {
+      "id": "real_7",
+      "label": "real",
+      "latitude": 24.5072,
+      "longitude": 67.3333,
+      "hours_old": 6.2,
+      "vouch_count": 2,
+      "is_near_disaster": true,
+      "trust_score": 0.75
+    },
+    {
+      "id": "real_8",
+      "label": "real",
+      "latitude": 25.2071,
+      "longitude": 66.0778,
+      "hours_old": 9.7,
+      "vouch_count": 3,
+      "is_near_disaster": true,
+      "trust_score": 0.85
+    },
+    {
+      "id": "real_9",
+      "label": "real",
+      "latitude": 25.2093,
+      "longitude": 67.1893,
+      "hours_old": 11.3,
+      "vouch_count": 2,
+      "is_near_disaster": true,
+      "trust_score": 0.75
+    },
+    {
+      "id": "real_10",
+      "label": "real",
+      "latitude": 24.0188,
+      "longitude": 66.5564,
+      "hours_old": 0.8,
+      "vouch_count": 1,
+      "is_near_disaster": true,
+      "trust_score": 0.7
+    },
+    {
+      "id": "real_11",
+      "label": "real",
+      "latitude": 25.053,
+      "longitude": 65.6837,
+      "hours_old": 15.4,
+      "vouch_count": 0,
+      "is_near_disaster": true,
+      "trust_score": 0.5
+    },
+    {
+      "id": "real_12",
+      "label": "real",
+      "latitude": 24.4137,
+      "longitude": 67.4202,
+      "hours_old": 15.0,
+      "vouch_count": 1,
+      "is_near_disaster": true,
+      "trust_score": 0.6
+    },
+    {
+      "id": "real_13",
+      "label": "real",
+      "latitude": 24.6667,
+      "longitude": 67.2073,
+      "hours_old": 4.8,
+      "vouch_count": 0,
+      "is_near_disaster": true,
+      "trust_score": 0.6
+    },
+    {
+      "id": "real_14",
+      "label": "real",
+      "latitude": 24.6817,
+      "longitude": 66.8547,
+      "hours_old": 13.1,
+      "vouch_count": 1,
+      "is_near_disaster": true,
+      "trust_score": 0.6
+    },
+    {
+      "id": "real_15",
+      "label": "real",
+      "latitude": 24.5061,
+      "longitude": 67.0868,
+      "hours_old": 16.7,
+      "vouch_count": 4,
+      "is_near_disaster": true,
+      "trust_score": 0.9
+    },
+    {
+      "id": "real_16",
+      "label": "real",
+      "latitude": 24.9439,
+      "longitude": 67.4314,
+      "hours_old": 13.8,
+      "vouch_count": 0,
+      "is_near_disaster": true,
+      "trust_score": 0.5
+    },
+    {
+      "id": "real_17",
+      "label": "real",
+      "latitude": 24.8664,
+      "longitude": 67.0441,
+      "hours_old": 5.7,
+      "vouch_count": 2,
+      "is_near_disaster": true,
+      "trust_score": 0.8
+    },
+    {
+      "id": "real_18",
+      "label": "real",
+      "latitude": 25.9895,
+      "longitude": 67.4996,
+      "hours_old": 10.2,
+      "vouch_count": 2,
+      "is_near_disaster": true,
+      "trust_score": 0.75
+    },
+    {
+      "id": "real_19",
+      "label": "real",
+      "latitude": 25.0177,
+      "longitude": 67.6572,
+      "hours_old": 15.9,
+      "vouch_count": 3,
+      "is_near_disaster": true,
+      "trust_score": 0.8
+    }
+  ]
+}
