@@ -10,6 +10,9 @@ interface Need {
   longitude: number
   is_resolved: boolean
   created_at: string
+  trust_score: number
+  location_verified: boolean
+  vouch_count: number
 }
 
 interface Resource {
@@ -157,7 +160,7 @@ export default function NeedsPanel() {
                 className={`p-3 border-b border-gray-800 ${selectedNeed === need.id ? 'bg-gray-900' : ''}`}
               >
                 <div className="flex justify-between items-start gap-2">
-                  <div>
+                  <div className="flex-1">
                     <p className="text-xs font-medium text-white">{need.description}</p>
                     <p className="text-xs text-gray-500 mt-0.5">
                       {need.name} · {need.category}
@@ -165,7 +168,28 @@ export default function NeedsPanel() {
                     <p className="text-xs text-gray-600">
                       {need.latitude.toFixed(3)}, {need.longitude.toFixed(3)}
                     </p>
+
+                    {/* Trust score bar */}
+                    <div className="flex items-center gap-2 mt-1.5">
+                      <div className="flex-1 h-1 bg-gray-800 rounded-full overflow-hidden">
+                        <div
+                          className="h-full rounded-full transition-all"
+                          style={{
+                            width: `${((need.trust_score || 0.5) * 100)}%`,
+                            background: (need.trust_score || 0.5) >= 0.6
+                              ? '#22c55e'
+                              : (need.trust_score || 0.5) >= 0.35
+                              ? '#f97316'
+                              : '#ef4444'
+                          }}
+                        />
+                      </div>
+                      <span className="text-xs text-gray-500 shrink-0">
+                        {need.location_verified ? '📍' : '⚠️'} {((need.trust_score || 0.5) * 100).toFixed(0)}%
+                      </span>
+                    </div>
                   </div>
+
                   <button
                     onClick={() => findMatches(need.id)}
                     className="text-xs px-2 py-1 border border-gray-700 rounded hover:border-gray-500 text-gray-400 hover:text-white shrink-0"
@@ -173,6 +197,7 @@ export default function NeedsPanel() {
                     Match
                   </button>
                 </div>
+
                 {selectedNeed === need.id && matches !== null && (
                   <div className="mt-2 pt-2 border-t border-gray-800">
                     <p className="text-xs text-gray-500 mb-1">
