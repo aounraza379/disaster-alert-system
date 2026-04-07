@@ -5,9 +5,13 @@ EONET_URL = "https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=50"
 
 async def fetch_natural_events():
     async with httpx.AsyncClient(timeout=30.0) as client:
-        response = await client.get(EONET_URL)
-        response.raise_for_status()
-        data = response.json()
+        try:
+            response = await client.get(EONET_URL)
+            response.raise_for_status()
+            data = response.json()
+        except Exception as e:
+            print(f"EONET fetch failed: {e}")
+            return []
 
     events = []
     for event in data["events"]:
