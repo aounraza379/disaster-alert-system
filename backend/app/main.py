@@ -24,8 +24,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://*.vercel.app",
-        "https://disaster-alert-system.up.railway.app",
+        "https://disaster-alert-system-beta.vercel.app/",
+        "https://disaster-alert-system.up.railway.app/",
     ],
     allow_credentials=True,
     allow_methods=["*"],
